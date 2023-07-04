@@ -1,0 +1,45 @@
+<h2>Filme Info</h2>
+<hr/>
+
+<form #filmeForm="ngForm" *ngIf="filme">
+    <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]='filme.name' required name="name" #filmeName="ngModel" [ngClass]="{'is-invalid': filmeName.invalid}" class="form-control" placeholder="Insira o nome do curso">
+            <div class="invalid-feedback">
+                <span>Filme name is required</span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">Rating:</label>    
+        <div class="col-sm-10">
+            <input [(ngModel)]="filme.rating" required name="rating" #filmeRating="ngModel" type="number" 
+                [ngClass]="{'is-invalid': filmeRating.invalid}" class="form-control">
+            
+            <div class="invalid-feedback">
+                <span>Filme rating is required</span>
+            </div>
+        </div>        
+    </div>
+
+    <div class="form-group row mb-1">
+        <label class="col-sm-2 col-form-label">Comentários:</label>    
+        <div class="col-sm-10">
+            <textarea [(ngModel)]="filme.comment" required name="description" #filmeDescription="ngModel" 
+                [ngClass]="{'is-invalid': filmeDescription.invalid}" class="form-control"></textarea>
+            
+            <div class="invalid-feedback">
+                <span>Filme comment is required</span>
+            </div>
+        </div>        
+    </div>
+
+    <button [disabled]="filmeForm.invalid" (click)="save()" class="btn btn-primary">Editar e fechar</button>
+    <button [routerLink]="['/filmes']" class="btn btn-secondary m-1">Voltar</button>
+    <button [disabled]="filmeForm.invalid" (click)="criar()" class="btn btn-success">Salvar e Novo</button>
+</form>
+

@@ -1,0 +1,60 @@
+<h2>Lista de Filmes</h2>
+
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Pesquisar por nome:</label>
+
+    <div class="col-sm-10">
+        <input [(ngModel)]='filter' class="form-control" placeholder="Insira o nome do curso">
+    </div>
+
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-3 col-md-6 mb-4" *ngFor="let filme of filteredFilmes">
+    <div class="card">
+      <img class="card-img-top" [src]="filme.imageUrl" alt="Movie Image">
+      <div class="card-body">
+        <h5 class="card-title">{{filme.name | uppercase}}</h5>
+        <p class="card-text">
+          <app-star [rating]="filme.rating"></app-star>
+        </p>
+        <div class="d-flex justify-content-end">
+          <a [routerLink]="['/filmes/info', filme.id]" class="btn btn-primary m-1">Editar</a>
+        <button (click)="deleteById(filme.id)" class="btn btn-danger m-1" type="button">Deletar</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let filme of filteredFilmes">
+            <td><img [src]="filme.imageUrl" width="40px" height="40px"></td>
+            <td>{{filme.name | uppercase}}</td>
+            <td>
+                <app-star [rating]="filme.rating"></app-star>
+            </td>
+            <td>
+              <a [routerLink]="['/filmes/info', filme.id]" class="btn btn-primary m-1">Edit</a>
+              <button (click)="deleteById(filme.id)" class="btn btn-danger" type="button">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+
