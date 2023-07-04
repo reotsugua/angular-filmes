@@ -1,3 +1,22 @@
+# Modo de Usar
+
+1º - Execute `npm install` para atualizar a node_modules. Navegue até `./server/filme-manager-server` e execute o comando sugerido dentro da pasta apresentada.
+
+2º - Execute `npm install` para atualizar a node_modules na pasta raiz.
+
+3º - Verificar se as seguintes dependencias foram instaladas.
+* Bootstrap
+    + ng add @ng-bootstrap/ng-bootstrap
+* Font Awesome
+    + ng add @fortawesome/angular-fontawesome
+
+4º - Execute `node serve.js` para um servidor. Navegue até `./server/filme-manager-server`. Execute o comando sugerido dentro da pasta apresentada.
+
+5º - Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
+
+--------------------
+--------------------
+
 # AngularFilmes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
